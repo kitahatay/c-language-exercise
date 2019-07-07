@@ -1,3 +1,5 @@
+//引数の文字列を反転させて出力する。
+
 #include <stdio.h>
 
 char *reverse(char *);
