@@ -1,20 +1,32 @@
+#include <stdio.h>
 
 void main() {
-  printf("Hello World\n");
-  printf(" World");
-  unsigned char astr[];
-
-  unsigned char *Sreverse(unsigned char *, unsigned char *), astr;
   
-  printf("%s", Sreverse(astr));
-  return 0;
+  char str[] = "abcdefg";
+  char *reverse( char * );
+
+  printf("Input --> %s\n", str);
+  
+  reverse(str);
+  printf("Output --> %s\n", str);
+
 }
 
-unsigned char *Sreverse(unsigned char *s, unsigned char *t) {
-  unsigned *pp;
-  pp=t;
+char *reverse( char *str ) {
+  int i=0, j=0;
+  char tmpt[100];
 
-  while(*s++);
-  for(t=0; *t++=*s--;);
-  return pp;
+  while(str[i]) {
+    // printf("%c", str[i]);
+    tmpt[i]=str[i];
+    i++;
+  }
+
+  while(i) {
+    i--;
+    str[j]=tmpt[i];
+    j++;
+  }
+  
 }
+
