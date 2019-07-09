@@ -15,19 +15,39 @@ void main(int argc, char *argv[]) {
 
 //引数の文字列を文字コード順に並べ替える。
 char *sort(char *str) {
-    int i,j;
-    unsigned char tmp;
+    // int i,j,k;
+    // unsigned char tmp;
 
-    for(j=0; str[j]; j++) {    
-      for(i=1; str[i]; i++) {
-        if(str[i-1] > str[i]) {
-          tmp = str[i-1];
-          str[i-1] = str[i];
-          str[i] = tmp;
+    // for(i=0; str[i]; i++) {
+    //   for(j=0; str[j]; j++) {
+    //     if(str[j] > str[j+1]) {
+    //       tmp = str[j];
+    //       str[j] = str[j+1];
+    //       str[j+1] = tmp;
+          
+    //     }
+    //   }
+    // }
+///////////////    
+    char tmp;
+    char *str1 = str, *str2 = str;
+
+    // while( *last != '\0') {last++;}
+    // if (str != last) last--;
+    while(*str1){
+      do {
+        str2++;
+        if(*str1 > *str2) {
+          tmp = *str1;
+          *str1 = *str2;
+          *str2 = tmp;
         }
-      }
+      } while(*str2);
+      str1++;
     }
+
     return str;
+
 }
 
 //引数の文字列を反転させる。
