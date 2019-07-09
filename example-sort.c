@@ -9,7 +9,7 @@ void main(int argc, char *argv[]) {
     //printf("count --> %d\n", argc);
     p = argc > 1 ? argv[1] : "";
     printf("Input --> %s\n", argv[1]);
-    //printf("Output --> %s\n", reverse(p));
+    printf("Output --> %s\n", reverse(p));
     printf("Output --> %s\n", sort(p)); //reverseと同じ引数なので、反転に注意
 }
 
