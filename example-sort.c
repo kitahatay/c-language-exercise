@@ -9,8 +9,8 @@ void main(int argc, char *argv[]) {
     //printf("count --> %d\n", argc);
     p = argc > 1 ? argv[1] : "";
     printf("Input --> %s\n", argv[1]);
-    printf("Output --> %s\n", reverse(p));
-    printf("Output --> %s\n", sort(p)); //reverseと同じ引数なので、反転に注意
+    printf("Output1 --> %s\n", reverse(p));
+    printf("Output2 --> %s\n", sort(p)); //reverseと同じ引数なので、反転に注意
 }
 
 //引数の文字列を文字コード順に並べ替える。
@@ -18,7 +18,7 @@ char *sort(char *str) {
     int i,j;
     unsigned char tmp;
 
-    for(j=1; str[j]; j++) {    
+    for(j=0; str[j]; j++) {    
       for(i=1; str[i]; i++) {
         if(str[i-1] > str[i]) {
           tmp = str[i-1];
