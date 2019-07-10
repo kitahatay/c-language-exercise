@@ -9,7 +9,7 @@ void main(int argc, char *argv[]) {
     //printf("count --> %d\n", argc);
     p = argc > 1 ? argv[1] : "";
     printf("Input --> %s\n", argv[1]);
-    printf("Output1 --> %s\n", reverse(p));
+    //printf("Output1 --> %s\n", reverse(p));
     printf("Output2 --> %s\n", sort(p)); //reverseと同じ引数なので、反転に注意
 }
 
@@ -30,19 +30,42 @@ char *sort(char *str) {
     // }
 ///////////////    
     char tmp;
-    char *str1 = str, *str2 = str;
+    long las;
+    char *str1 = str, *str2 = str, *last = str;
+    //char first = &str[0];
+    // long t;
+    // t=&first;
+    char size = sizeof(str) / sizeof(char);
 
-    // while( *last != '\0') {last++;}
-    // if (str != last) last--;
-    while(*str1){
-      do {
-        str2++;
+    while( *last != '\0') {last++;}
+    if (str != last) last--;
+    las=*last;
+
+    while(*str1) {
+      while(*str2) {
         if(*str1 > *str2) {
           tmp = *str1;
+          // las = &str1;
           *str1 = *str2;
           *str2 = tmp;
         }
-      } while(*str2);
+        // else {
+          str2++;
+        // }
+      }
+      str2--;
+      while(str2 != str1) {
+        if(*str1 > *str2) {
+          tmp = *str1;
+          // las = &str1;
+          *str1 = *str2;
+          *str2 = tmp;
+        }
+        // else {
+          str2--;  
+      // last--;
+      // *str2=las;
+      }
       str1++;
     }
 
