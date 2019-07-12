@@ -28,49 +28,21 @@ char *sort(char *str) {
     //     }
     //   }
     // }
-///////////////    
+///////////////
     char tmp;
-    long las;
-    char *str1 = str, *str2 = str, *last = str;
-    //char first = &str[0];
-    // long t;
-    // t=&first;
-    char size = sizeof(str) / sizeof(char);
+    char *str1 = str, *str2 = str;
 
-    while( *last != '\0') {last++;}
-    if (str != last) last--;
-    las=*last;
-
-    while(*str1) {
-      while(*str2) {
+    for(; *str1; str1++, str2 = str1) {
+      for(str2++; *str2; str2++) {
         if(*str1 > *str2) {
           tmp = *str1;
-          // las = &str1;
           *str1 = *str2;
           *str2 = tmp;
         }
-        // else {
-          str2++;
-        // }
       }
-      str2--;
-      while(str2 != str1) {
-        if(*str1 > *str2) {
-          tmp = *str1;
-          // las = &str1;
-          *str1 = *str2;
-          *str2 = tmp;
-        }
-        // else {
-          str2--;  
-      // last--;
-      // *str2=las;
-      }
-      str1++;
     }
 
     return str;
-
 }
 
 //引数の文字列を反転させる。
