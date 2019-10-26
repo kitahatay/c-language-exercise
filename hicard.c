@@ -69,7 +69,6 @@ int main(){
   do {
    
     if (multiplier==1){
-
       printf("最初のカードです。\n");
       card1 =get_random(1, 13);
       show_card(card1);
